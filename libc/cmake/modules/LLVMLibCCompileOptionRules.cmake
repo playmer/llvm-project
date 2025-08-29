@@ -144,7 +144,7 @@ function(_get_common_compile_options output_var flags)
   set(compile_options ${LIBC_COMPILE_OPTIONS_DEFAULT} ${compile_flags} ${config_flags} ${arch_flags})
 
   if(LLVM_LIBC_COMPILER_IS_GCC_COMPATIBLE)
-    list(APPEND compile_options "-fpie")
+    #list(APPEND compile_options "-fpie")
 
     if(LLVM_LIBC_FULL_BUILD)
       # Only add -ffreestanding flag in non-GPU full build mode.
@@ -155,7 +155,7 @@ function(_get_common_compile_options output_var flags)
       # Manually disable standard include paths to prevent system headers from
       # being included.
       if(LIBC_CC_SUPPORTS_NOSTDLIBINC)
-        list(APPEND compile_options "-nostdlibinc")
+        #list(APPEND compile_options "-nostdlibinc")
       elseif(COMPILER_RESOURCE_DIR)
         # TODO: We should require COMPILER_RESOURCE_DIR to be set.
         list(APPEND compile_options "-isystem${COMPILER_RESOURCE_DIR}/include")

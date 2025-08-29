@@ -218,9 +218,9 @@ endif()
 
 
 # Windows does not support full mode build.
-if (LIBC_TARGET_OS_IS_WINDOWS AND LLVM_LIBC_FULL_BUILD)
-  message(FATAL_ERROR "Windows does not support full mode build.")
-endif ()
+#if (LIBC_TARGET_OS_IS_WINDOWS AND LLVM_LIBC_FULL_BUILD)
+#  message(FATAL_ERROR "Windows does not support full mode build.")
+#endif ()
 
 
 message(STATUS
