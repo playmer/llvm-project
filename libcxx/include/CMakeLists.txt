@@ -1700,12 +1700,12 @@ endforeach()
 
 # Generate the IWYU mapping. This depends on all header files but it's also considered as an
 # "include" for dependency tracking.
-add_custom_command(OUTPUT "${LIBCXX_GENERATED_INCLUDE_DIR}/libcxx.imp"
-  COMMAND "${Python3_EXECUTABLE}" "${LIBCXX_SOURCE_DIR}/utils/generate_iwyu_mapping.py" "-o" "${LIBCXX_GENERATED_INCLUDE_DIR}/libcxx.imp"
-  DEPENDS "${LIBCXX_SOURCE_DIR}/utils/libcxx/header_information.py"
-  COMMENT "Generate the mapping file for include-what-you-use"
-)
-list(APPEND _all_includes "${LIBCXX_GENERATED_INCLUDE_DIR}/libcxx.imp")
+# add_custom_command(OUTPUT "${LIBCXX_GENERATED_INCLUDE_DIR}/libcxx.imp"
+#   COMMAND "${Python3_EXECUTABLE}" "${LIBCXX_SOURCE_DIR}/utils/generate_iwyu_mapping.py" "-o" "${LIBCXX_GENERATED_INCLUDE_DIR}/libcxx.imp"
+#   DEPENDS "${LIBCXX_SOURCE_DIR}/utils/libcxx/header_information.py"
+#   COMMENT "Generate the mapping file for include-what-you-use"
+# )
+# list(APPEND _all_includes "${LIBCXX_GENERATED_INCLUDE_DIR}/libcxx.imp")
 
 add_custom_target(generate-cxx-headers ALL DEPENDS ${_all_includes})
 
